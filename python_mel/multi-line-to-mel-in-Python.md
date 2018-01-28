@@ -1,10 +1,11 @@
 # Multi line to mel in Python
 
-## If we use multi line string format in Python, We may get redundant space in left, for example
+If we use multi line string format in Python</br>
+We may get redundant space in left, for example :
 
 ```python
 def foo(*args, **kwargs):
-    result = \ 
+    result = \
     r'''
         string $selections[] = `ls -sl`;
         for ( $select in $selections )
@@ -18,7 +19,7 @@ receive = foo()
 print receive
 ```
 
-## It will print below
+## It will show below
 
 ```python
         string $selection[] = `ls -sl`;
@@ -28,9 +29,8 @@ print receive
         }
 ```
 
-## Got 8 spaces(2tabs) ! although could'nt affect syntax in MEL
-
----
+We got 8 spaces(2tabs)</br>
+Although it could not affect running in MEL...
 
 ## We could be use textwrap module
 
@@ -38,7 +38,7 @@ print receive
 import textwrap
 
 def foo(*args, **kwargs):
-    result = \ 
+    result = \
     r'''
         string $selections[] = `ls -sl`;
         for ( $select in $selections )
@@ -50,4 +50,4 @@ def foo(*args, **kwargs):
     return textwrap.dedent(result)
 ```
 
-## Solve this problem!
+Solved!
